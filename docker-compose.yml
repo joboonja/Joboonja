@@ -1,0 +1,38 @@
+version: '3.3'
+services:
+
+  frontend:
+    build:
+      context: ./IE_UTCourse_Frontend/joboonja-app
+    ports:
+      - "80:80"
+    depends_on:
+      - "backend"
+  
+  backend:
+    build: 
+      context: ./IE_UTCourse_Backend
+    ports:
+      - "8080:8080"
+    links:
+      - "db:joboonja"
+    expose:
+      - "8080"
+    depends_on: 
+      - "db"
+      
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: joboonja
+    volumes:
+      - database:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 13777731
+      MYSQL_DATABASE: joboonja
+      
+volumes:
+  database:
+ 
+
+
