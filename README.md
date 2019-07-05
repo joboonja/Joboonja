@@ -6,3 +6,4 @@ It is a web application for finding projects to do if you are qualified for them
 This project's backend is developed in Java and frontend is developed with react.
 Docker-compose is used for deployment.
 
+<img src="https://github.com/joboonja/Joboonja/blob/master/Cover.png" width="900" height="600"/>
